@@ -42,7 +42,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 // Define API_URL directly since the config module is having issues
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+const API_URL = process.env.REACT_APP_API_URL || 'https://mychat-server-bb6f.onrender.com';
 
 // Create global caches to persist across component unmounts/remounts
 const globalImageSrcCache = new Map<string, string>();
