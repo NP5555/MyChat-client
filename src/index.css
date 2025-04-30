@@ -5,9 +5,74 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #FFFFFF;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC107;
+}
+
+::selection {
+  background-color: rgba(255, 215, 0, 0.3);
+  color: #FFFFFF;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Prevent text selection on mobile */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  input, textarea {
+    font-size: 16px !important; /* Prevent zoom on input focus on iOS */
+  }
+}
+
+/* Fix for mobile viewport height issues with browser UI */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .vh-fix {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Improve image rendering on mobile */
+img {
+  max-width: 100%;
+  height: auto;
 }
