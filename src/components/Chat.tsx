@@ -77,7 +77,6 @@ const Chat: React.FC = () => {
   const [lastRefreshTime, setLastRefreshTime] = useState(Date.now());
   const refreshIntervalRef = useRef<NodeJS.Timeout | undefined>(undefined);
   const isInitialLoadRef = useRef(true);
-  const mountedRef = useRef(true);
   const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState<NodeJS.Timeout | null>(null);
@@ -525,7 +524,7 @@ const Chat: React.FC = () => {
       return () => {
         isMounted = false;
       };
-    }, [messageId, token, isProblematicImage]);
+    }, [messageId, isProblematicImage]);
     
     const handleRetry = () => {
       // Clear from caches
